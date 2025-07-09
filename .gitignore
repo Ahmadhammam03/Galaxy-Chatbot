@@ -35,8 +35,3 @@ logs/
 # Temporary files
 *.tmp
 temp/
-
-# To exclude large files
-echo "*.safetensors" >> .gitignore
-echo "*.bin" >> .gitignore
-echo "models/" >> .gitignore
