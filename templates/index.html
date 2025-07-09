@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy & Alibaba Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- First Screenshot -->
+    <div class="screenshot">
+        <img src="{{ url_for('static', filename='first image.png') }}" alt="Galaxy Homepage">
+    </div>
+    
+    <!-- Second Screenshot -->
+    <div class="screenshot">
+        <img src="{{ url_for('static', filename='second image.png') }}" alt="Welcome Message">
+    </div>
+    
+    <!-- Third Screenshot -->
+    <div class="screenshot">
+        <img src="{{ url_for('static', filename='third image.png') }}" alt="Areas We Serve">
+    </div>
+    
+    <!-- Fourth Screenshot -->
+    <div class="screenshot">
+        <img src="{{ url_for('static', filename='fourth image.png') }}" alt="About & Contact">
+    </div>
+    
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <div class="speech-bubble" id="speechBubble">
+            <span id="bubbleText">✨ Your Digital Guide Awaits! ✨</span>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3><i class="fas fa-robot"></i> Galaxy Assistant</h3>
+                <button class="close-chatbot" id="closeChatbot"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hello! I'm your Galaxy Assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <div class="chatbot-icon" id="chatbotIcon">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

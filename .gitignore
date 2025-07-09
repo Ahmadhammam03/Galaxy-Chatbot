@@ -1,0 +1,42 @@
+# Large model files (exclude from GitHub)
+models/galaxy_alibaba_chatbot/adapter_model.safetensors
+models/galaxy_alibaba_chatbot/training_args.bin
+models/galaxy_alibaba_chatbot/checkpoint-*/
+*.safetensors
+*.bin
+*.pth
+*.pt
+
+# Environment variables
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints  
+.ipynb_checkpoints
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+temp/
+
+# To exclude large files
+echo "*.safetensors" >> .gitignore
+echo "*.bin" >> .gitignore
+echo "models/" >> .gitignore
