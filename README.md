@@ -47,13 +47,19 @@ An AI-powered chatbot for Galaxy Organisation's partnership with Alibaba Cloud A
    pip install -r requirements.txt
    ```
 
-5. **Run the application**
+5. **Download model files** (Required for fine-tuned responses)
+Due to GitHub file size limits, the fine-tuned model files are not included. You must download them separately and place in models/galaxy_alibaba_chatbot/:
+- `adapter_model.safetensors` (180MB)
+- training_args.bin
+See `models/galaxy_alibaba_chatbot/DOWNLOAD_MODEL.md` for detailed instructions.
+
+6. **Run the application**
 
    ```bash
    python app.py
    ```
 
-6. **Open your browser**
+7. **Open your browser**
    Navigate to `http://localhost:5000`
 
 ### ⚠️ Important Notes
@@ -61,7 +67,7 @@ An AI-powered chatbot for Galaxy Organisation's partnership with Alibaba Cloud A
 - **Always activate the conda environment** before running: `conda activate chatbot`
 - The specific package versions are required for model compatibility
 - If you get import errors, make sure you followed steps 2-4 exactly
-- **Model files**: Due to GitHub size limits, some large model files are not included. See `models/galaxy_alibaba_chatbot/DOWNLOAD_MODEL.md` for details.
+- **Model files**: The chatbot requires two additional model files (180MB total). Without them, it will use the base model (not fine-tuned).
 
 ## 📁 Project Structure
 
@@ -69,9 +75,12 @@ An AI-powered chatbot for Galaxy Organisation's partnership with Alibaba Cloud A
 Galaxy_Chatbot/
 ├── app.py                                    # Main Flask application
 ├── requirements.txt                          # Python dependencies
-├── Galaxy_Alibaba_Chatbot_Training.ipynb    # Training notebook
+├── Galaxy_Alibaba_Chatbot_Training.ipynb     # Training notebook
 ├── data/                                     # Training and Q&A data
+│   ├── data.json                             # Raw Q&A data
+│   └── processed_data.json                   # Processed training data
 ├── models/                                   # Trained model files
+│   └── galaxy_alibaba_chatbot/               # Fine-tuned model (partial files included)
 ├── static/                                   # CSS, JS, images
 ├── templates/                                # HTML templates
 ├── utils/                                    # Utility modules
