@@ -51,6 +51,7 @@ An AI-powered chatbot for Galaxy Organisation's partnership with Alibaba Cloud A
 Due to GitHub file size limits, the fine-tuned model files are not included. You must download them separately and place in models/galaxy_alibaba_chatbot/:
 - `adapter_model.safetensors` (180MB)
 - training_args.bin
+
 See `models/galaxy_alibaba_chatbot/DOWNLOAD_MODEL.md` for detailed instructions.
 
 6. **Run the application**
