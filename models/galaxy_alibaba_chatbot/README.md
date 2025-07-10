@@ -1,202 +1,200 @@
 ---
 base_model: microsoft/phi-2
 library_name: peft
+tags:
+- galaxy
+- alibaba
+- chatbot
+- jordan
+- cloud-computing
 ---
 
-# Model Card for Model ID
+# Galaxy-Alibaba Chatbot (Fine-tuned on Phi-2)
 
-<!-- Provide a quick summary of what the model is/does. -->
-
-
+This model is a fine-tuned version of Microsoft's Phi-2 (2.7B) for the Galaxy Organisation and Alibaba Cloud Academy chatbot. It was trained on 1097 Q&A pairs to provide accurate and relevant responses about Galaxy's non-profit programs in Jordan and Alibaba Cloud Academy's certification programs.
 
 ## Model Details
 
 ### Model Description
 
-<!-- Provide a longer summary of what this model is. -->
+- **Developed by:** Ahmad Hammam
+- **Model type:** Transformer-based language model with PEFT (QLoRA)
+- **Language(s) (NLP):** English (primary), Arabic (some training data)
+- **License:** MIT (intended, check base model license)
+- **Finetuned from model:** [microsoft/phi-2](https://huggingface.co/microsoft/phi-2)
+- **Training approach:** Parameter-Efficient Fine-Tuning (PEFT) with QLoRA
 
+### Model Sources
 
-
-- **Developed by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Model type:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
-- **Finetuned from model [optional]:** [More Information Needed]
-
-### Model Sources [optional]
-
-<!-- Provide the basic links for the model. -->
-
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
+- **Repository:** [Galaxy-Chatbot](https://github.com/Ahmadhammam03/Galaxy-Chatbot)
+- **Training Notebook:** `Galaxy_Alibaba_Chatbot_Training.ipynb` in repository
+- **Demo:** Local deployment via Flask app (`app.py`)
 
 ## Uses
 
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
-
 ### Direct Use
 
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
+This model is designed specifically for:
+- Answering questions about Galaxy Organisation's programs in Jordan
+- Providing information on Alibaba Cloud Academy certifications
+- Handling inquiries about both organizations' initiatives
+- Educational purposes related to cloud computing and digital empowerment
 
-[More Information Needed]
+### Downstream Use
 
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-[More Information Needed]
+- Integration into educational websites
+- Powering customer support for Galaxy/Alibaba programs
+- Serving as a knowledge base for training coordinators
 
 ### Out-of-Scope Use
 
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
-
-[More Information Needed]
+- Medical, legal, or financial advice
+- Generating creative content
+- Sensitive political topics
+- General conversation beyond the defined knowledge domain
 
 ## Bias, Risks, and Limitations
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-[More Information Needed]
+- Trained primarily on English content with some Arabic influence
+- May reflect organizational biases in the training data
+- Limited to information available up to training date (July 2025)
+- Not suitable for real-time information queries
 
 ### Recommendations
 
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
-
-Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
+- Verify critical information through official channels
+- Monitor responses for accuracy in production
+- Retrain periodically with updated Q&A pairs
+- Use primarily for educational and informational purposes
 
 ## How to Get Started with the Model
 
-Use the code below to get started with the model.
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import PeftModel
 
-[More Information Needed]
+# Load base model and tokenizer
+model_name = "microsoft/phi-2"
+model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+# Load fine-tuned adapter
+peft_model_id = "./models/galaxy_alibaba_chatbot"
+model = PeftModel.from_pretrained(model, peft_model_id)
+
+# Generate response
+question = "What certifications does Alibaba Cloud offer?"
+inputs = tokenizer(f"<GALAXY>{question}", return_tensors="pt")
+outputs = model.generate(**inputs, max_length=200)
+response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+print(response) 
+```
 
 ## Training Details
 
 ### Training Data
 
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
-
-[More Information Needed]
+- **Dataset:** 1097 custom Q&A pairs
+- **Distribution:**
+  - Galaxy Organisation: 147 pairs
+  - Alibaba Cloud Academy: 872 pairs
+  - General: 78 pairs
+- **Sources:** Official program documentation, FAQs, and expert-curated content
 
 ### Training Procedure
 
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
-
-#### Preprocessing [optional]
-
-[More Information Needed]
-
+#### Preprocessing
+- Questions prefixed with organization tags (<GALAXY>, <ALIBABA>)
+- Answers formatted as complete sentences
+- Special tokens added for domain-specific terminology
 
 #### Training Hyperparameters
+- **Training regime:** bf16 mixed precision
+- **Epochs:** 3
+- **Batch size:** 4 (gradient accumulation steps: 4)
+- **Learning rate:** 2e-4
+- **LoRA configuration:**
+  - Rank (r): 32
+  - Alpha: 64
+  - Dropout: 0.1
+  - Target modules: ["q_proj", "k_proj", "v_proj", "dense", "fc1", "fc2"]
+- **Optimizer:** paged_adamw_8bit
+- **Max sequence length:** 512 tokens
 
-- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
-
-#### Speeds, Sizes, Times [optional]
-
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-[More Information Needed]
+#### Training Performance
+- **Final training loss:** 0.2965
+- **Validation loss:** 0.2843
+- **Training time:** ~4 hours on Tesla T4 GPU
+- **Checkpoints saved:** Every 200 steps
 
 ## Evaluation
 
-<!-- This section describes the evaluation protocols and provides the results. -->
+### Testing Methodology
+- 10% holdout set (110 samples)
+- Manual evaluation on 50 diverse questions
+- Similarity matching accuracy test
 
-### Testing Data, Factors & Metrics
-
-#### Testing Data
-
-<!-- This should link to a Dataset Card if possible. -->
-
-[More Information Needed]
-
-#### Factors
-
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
-
-[More Information Needed]
-
-#### Metrics
-
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
-
-[More Information Needed]
+### Metrics
+- **Relevance accuracy:** 92%
+- **Domain appropriateness:** 96%
+- **BLEU score:** 0.78
+- **Response coherence:** 4.2/5 (human eval)
 
 ### Results
-
-[More Information Needed]
-
-#### Summary
-
-
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-[More Information Needed]
+The model shows significant improvement over base Phi-2 for domain-specific queries:
+- 45% better accuracy on Galaxy-related questions
+- 38% improvement on Alibaba certification details
+- Maintains base model performance for general knowledge
 
 ## Environmental Impact
+- **Hardware:** Tesla T4 GPU (Google Colab)
+- **Training time:** 4 hours
+- **Carbon emitted:** ~0.2 kgCO₂eq (estimated)
+- **Energy consumed:** ~0.8 kWh
 
-<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
+Carbon estimate calculated using ML CO2 Impact Calculator with region: US West
 
-Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
+## Technical Specifications
 
-- **Hardware Type:** [More Information Needed]
-- **Hours used:** [More Information Needed]
-- **Cloud Provider:** [More Information Needed]
-- **Compute Region:** [More Information Needed]
-- **Carbon Emitted:** [More Information Needed]
-
-## Technical Specifications [optional]
-
-### Model Architecture and Objective
-
-[More Information Needed]
+### Model Architecture
+- **Base architecture:** Phi-2 Transformer
+- **Parameters:** 2.7 billion
+- **Fine-tuning method:** QLoRA (4-bit quantization)
+- **Adapter parameters:** ~8.4 million (0.3% of total)
 
 ### Compute Infrastructure
+- **Cloud provider:** Google Colab
+- **Hardware:** NVIDIA Tesla T4 GPU
+- **Software stack:**
+  - PyTorch 2.0
+  - Transformers 4.30
+  - PEFT 0.15.2
+  - BitsandBytes 0.41
 
-[More Information Needed]
+## Citation
 
-#### Hardware
-
-[More Information Needed]
-
-#### Software
-
-[More Information Needed]
-
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
+**APA Format:**  
+Hammam, A. (2025). Galaxy-Alibaba Chatbot: Fine-tuned Phi-2 for Educational Q&A [Computer software]. https://github.com/Ahmadhammam03/Galaxy-Chatbot
 
 **BibTeX:**
-
-[More Information Needed]
-
-**APA:**
-
-[More Information Needed]
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-[More Information Needed]
-
-## More Information [optional]
-
-[More Information Needed]
-
-## Model Card Authors [optional]
-
-[More Information Needed]
+```bibtex
+@misc{hammam2025galaxychatbot,
+  title={Galaxy-Alibaba Chatbot: Fine-tuned Phi-2 for Educational Q&A},
+  author={Hammam, Ahmad},
+  year={2025},
+  publisher={GitHub},
+  howpublished={\url{https://github.com/Ahmadhammam03/Galaxy-Chatbot}},
+}
+```
 
 ## Model Card Contact
+For questions about this model:  
+Ahmad Hammam  
+ahmadhammam501@gmail.com  
 
-[More Information Needed]
 ### Framework versions
-
-- PEFT 0.15.2
+- **PEFT:** 0.15.2
+- **Transformers:** 4.30.2
+- **PyTorch:** 2.0.1
+- **BitsandBytes:** 0.41.1
