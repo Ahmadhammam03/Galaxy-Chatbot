@@ -6,15 +6,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/Ahmadhammam03/Galaxy-Chatbot?style=social)](https://github.com/Ahmadhammam03/Galaxy-Chatbot/stargazers)
 
-An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba Cloud Academy**, focusing on cloud computing education and AI training programs in Jordan.
+An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba Cloud Academy**, focusing on cloud computing education and AI training programs in Jordan. This was developed as a **final project** showcasing advanced NLP and AI capabilities.
 
-<div align="center">
+## 🎥 Video Demonstration
 
-![Galaxy Chatbot Demo](https://user-images.githubusercontent.com/your-username/galaxy-chatbot-demo.gif)
+📹 **Complete User Experience Demo**: I've prepared a comprehensive video demonstration that shows the complete user experience of our chatbot. This video will give you a real feel for how users interact with our AI assistant.
 
-*Real-time AI-powered chatbot with intelligent responses and modern UI*
-
-</div>
+**▶️ [Watch Full Demo on YouTube](https://youtu.be/PABX_Mopsw8?si=u2c0sWIcKR5hgmSj)**
 
 ## 🌟 Features
 
@@ -35,22 +33,6 @@ An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba C
 - **⚡ Fast Processing**: Optimized for quick response times and smooth user experience
 - **📱 Mobile-Friendly**: Responsive design that works perfectly on all devices
 
-## 🖼️ Screenshots
-
-<div align="center">
-
-### 💬 Chat Interface
-![Chat Interface](https://via.placeholder.com/800x500/1e3a8a/ffffff?text=Galaxy+Chatbot+Interface)
-
-*Modern chat interface with real-time responses and intuitive design*
-
-### 📊 Admin Dashboard
-![Admin Dashboard](https://via.placeholder.com/800x500/059669/ffffff?text=Analytics+Dashboard)
-
-*Comprehensive analytics and conversation monitoring*
-
-</div>
-
 ## 🚀 Quick Start
 
 ### 📋 Prerequisites
@@ -58,7 +40,6 @@ An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba C
 - **Python 3.10** (via conda)
 - **8GB+ RAM** (for model loading)
 - **Conda** installed on your system
-- **Git** for cloning the repository
 
 ### ⚡ Installation
 
@@ -92,12 +73,11 @@ An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba C
 
 5. **Download model files** 🧠 **Required for fine-tuned responses**
    
-   Due to GitHub file size limits, the fine-tuned model files are not included. You must download them separately:
-   
+   Due to GitHub file size limits, the fine-tuned model files are not included. You must download them separately and place in `models/galaxy_alibaba_chatbot/`:
    - `adapter_model.safetensors` (180MB)
    - `training_args.bin`
-   
-   📥 See `models/galaxy_alibaba_chatbot/DOWNLOAD_MODEL.md` for detailed download instructions.
+
+   See `models/galaxy_alibaba_chatbot/DOWNLOAD_MODEL.md` for detailed instructions.
 
 6. **Run the application**
 
@@ -116,34 +96,22 @@ An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba C
 - If you get import errors, make sure you followed steps 2-4 exactly
 - **Model files**: The chatbot requires additional model files (180MB total). Without them, it will use the base model (not fine-tuned).
 
-## 📁 Project Architecture
+## 📁 Project Structure
 
 ```
 Galaxy_Chatbot/
-├── 🚀 app.py                                    # Main Flask application
-├── 📦 requirements.txt                          # Python dependencies
-├── 📓 Galaxy_Alibaba_Chatbot_Training.ipynb     # Training notebook
-├── 📂 data/                                     # Training and Q&A data
-│   ├── 📄 data.json                             # Raw Q&A data
-│   └── 📄 processed_data.json                   # Processed training data
-├── 🧠 models/                                   # Trained model files
-│   └── 🤖 galaxy_alibaba_chatbot/               # Fine-tuned model directory
-│       ├── 📥 DOWNLOAD_MODEL.md                 # Model download instructions
-│       ├── ⚙️ adapter_config.json               # Model configuration
-│       └── 📊 adapter_model.safetensors         # Fine-tuned weights (to download)
-├── 🎨 static/                                   # CSS, JS, images
-│   ├── 🎯 css/style.css                         # Custom styling
-│   ├── ⚡ js/chat.js                            # Chat functionality
-│   └── 🖼️ images/                               # UI images and icons
-├── 📄 templates/                                # HTML templates
-│   ├── 🏠 index.html                            # Main chat interface
-│   └── 📱 base.html                             # Base template
-├── 🛠️ utils/                                    # Utility modules
-│   ├── 🔍 similarity.py                         # Semantic matching
-│   └── 🧹 preprocessing.py                      # Text processing
-└── 📊 Generating_Data/                          # Data generation scripts
-    ├── 🏭 data_generator.py                     # Training data creation
-    └── 📝 templates/                            # Response templates
+├── app.py                                    # Main Flask application
+├── requirements.txt                          # Python dependencies
+├── Galaxy_Alibaba_Chatbot_Training.ipynb     # Training notebook
+├── data/                                     # Training and Q&A data
+│   ├── data.json                             # Raw Q&A data
+│   └── processed_data.json                   # Processed training data
+├── models/                                   # Trained model files
+│   └── galaxy_alibaba_chatbot/               # Fine-tuned model (partial files included)
+├── static/                                   # CSS, JS, images
+├── templates/                                # HTML templates
+├── utils/                                    # Utility modules
+└── Generating_Data/                          # Data generation scripts
 ```
 
 ## 🎯 Domain Expertise
@@ -154,70 +122,11 @@ This chatbot specializes in providing comprehensive information about:
 
 ### 🏢 Galaxy Organisation
 
-<table>
-<tr>
-<td align="center">
-<img src="https://via.placeholder.com/150x100/6366f1/ffffff?text=Galaxy+Org" alt="Galaxy Organisation">
-<br>
-<strong>IT-Based NGO</strong>
-<br>
-Non-profit in Jordan focusing on digital empowerment
-</td>
-<td align="center">
-<img src="https://via.placeholder.com/150x100/8b5cf6/ffffff?text=Training" alt="Training Programs">
-<br>
-<strong>Training Programs</strong>
-<br>
-Technology training and skill development
-</td>
-<td align="center">
-<img src="https://via.placeholder.com/150x100/ec4899/ffffff?text=Empowerment" alt="Empowerment">
-<br>
-<strong>Empowerment</strong>
-<br>
-Women and children empowerment initiatives
-</td>
-</tr>
-</table>
-
 ### ☁️ Alibaba Cloud Academy
-
-<table>
-<tr>
-<td align="center">
-<img src="https://via.placeholder.com/150x100/f59e0b/ffffff?text=ACA" alt="ACA Certification">
-<br>
-<strong>ACA Certification</strong>
-<br>
-Associate level cloud certifications
-</td>
-<td align="center">
-<img src="https://via.placeholder.com/150x100/10b981/ffffff?text=ACP" alt="ACP Certification">
-<br>
-<strong>ACP Certification</strong>
-<br>
-Professional level certifications
-</td>
-<td align="center">
-<img src="https://via.placeholder.com/150x100/3b82f6/ffffff?text=ACE" alt="ACE Certification">
-<br>
-<strong>ACE Certification</strong>
-<br>
-Expert level cloud architecture
-</td>
-</tr>
-</table>
 
 </div>
 
-### 📚 Knowledge Areas
-
-- **Cloud Computing Fundamentals**
-- **AI and Machine Learning on Cloud**
-- **Certification Preparation Materials**
-- **Training Program Information**
-- **Partnership Details and Benefits**
-- **Jordan-Specific Educational Opportunities**
+**Note**: This project was developed as a **final project** to demonstrate advanced AI and NLP capabilities, simulating a real-world chatbot for educational purposes.
 
 ## 🚀 Usage Guide
 
@@ -368,11 +277,10 @@ MIT License - Free for educational and commercial use
 
 ## 🙏 Acknowledgments
 
-- **🏢 Galaxy Organisation** for providing the domain expertise and partnership opportunity
-- **☁️ Alibaba Cloud Academy** for educational content and certification programs
 - **🤗 Hugging Face** for the transformers library and model hosting
 - **🔥 PyTorch** team for the excellent deep learning framework
 - **🌶️ Flask** community for the lightweight web framework
+- **📚 Educational Community** for inspiration and guidance
 
 ## 📞 Connect & Contact
 
@@ -382,7 +290,6 @@ MIT License - Free for educational and commercial use
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ahmadhammam03)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
-[![Email](https://img.shields.io/badge/Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
 
 </div>
 
@@ -402,20 +309,14 @@ MIT License - Free for educational and commercial use
 
 </div>
 
-## 🌟 Star History
-
-If you found this project helpful, please consider giving it a star! ⭐
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Ahmadhammam03/Galaxy-Chatbot&type=Date)](https://star-history.com/#Ahmadhammam03/Galaxy-Chatbot&Date)
-
 ---
 
 <div align="center">
 
 **🤖 Ready to experience intelligent AI-powered assistance? Get started now! 🚀**
 
-[📖 Documentation](./docs/) • [🐛 Report Bug](https://github.com/Ahmadhammam03/Galaxy-Chatbot/issues) • [💡 Request Feature](https://github.com/Ahmadhammam03/Galaxy-Chatbot/issues) • [⭐ Star Repository](https://github.com/Ahmadhammam03/Galaxy-Chatbot)
+**If you find this project helpful, please consider giving it a star! ⭐**
 
-**Made with ❤️ for Galaxy Organisation & Alibaba Cloud Academy**
+**Made with ❤️ by [Ahmad Hammam](https://github.com/Ahmadhammam03)**
 
 </div>
