@@ -4,9 +4,9 @@
 [![Flask](https://img.shields.io/badge/Flask-Latest-green.svg)](https://flask.palletsprojects.com/)
 [![Transformers](https://img.shields.io/badge/🤗%20Transformers-Latest-yellow.svg)](https://huggingface.co/transformers/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/Ahmadhammam03/Galaxy-Chatbot?style=social)](https://github.com/Ahmadhammam03/Galaxy-Chatbot/stargazers)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg)](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
 
-An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba Cloud Academy**, focusing on cloud computing education and AI training programs in Jordan. This was developed as a **project** showcasing advanced NLP and AI capabilities.
+An **AI-powered chatbot** for **Galaxy Organisation**'s partnership with **Alibaba Cloud Academy**, focusing on cloud computing education and AI training programs in Jordan. This was developed as a project showcasing advanced NLP and AI capabilities.
 
 ## 🎥 Video Demonstration
 
@@ -279,15 +279,11 @@ MIT License - Free for educational and commercial use
 - **📚 Educational Community** for inspiration and guidance
 
 ## 📞 Connect & Contact
-
-**👨‍💻 Ahmad Hammam**
-
-<div align="center">
-
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ahmadhammam03)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
 
-</div>
+**👨‍💻 Ahmad Hammam**
+
 
 - 🐙 **GitHub**: [@Ahmadhammam03](https://github.com/Ahmadhammam03)
 - 💼 **LinkedIn**: [Ahmad Hammam](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
@@ -296,14 +292,10 @@ MIT License - Free for educational and commercial use
 
 ## 📊 Project Statistics
 
-<div align="center">
+
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Ahmadhammam03/Galaxy-Chatbot)
-![GitHub last commit](https://img.shields.io/github/last-commit/Ahmadhammam03/Galaxy-Chatbot)
-![GitHub issues](https://img.shields.io/github/issues/Ahmadhammam03/Galaxy-Chatbot)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Ahmadhammam03/Galaxy-Chatbot)
 
-</div>
 
 ---
 
