@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/Ahmadhammam03/Galaxy-Chatbot?style=social)](https://github.com/Ahmadhammam03/Galaxy-Chatbot/stargazers)
 
-An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba Cloud Academy**, focusing on cloud computing education and AI training programs in Jordan. This was developed as a **final project** showcasing advanced NLP and AI capabilities.
+An **AI-powered chatbot** for Galaxy Organisation's partnership with **Alibaba Cloud Academy**, focusing on cloud computing education and AI training programs in Jordan. This was developed as a **project** showcasing advanced NLP and AI capabilities.
 
 ## 🎥 Video Demonstration
 
@@ -118,15 +118,11 @@ Galaxy_Chatbot/
 
 This chatbot specializes in providing comprehensive information about:
 
-<div align="center">
 
 ### 🏢 Galaxy Organisation
 
 ### ☁️ Alibaba Cloud Academy
 
-</div>
-
-**Note**: This project was developed as a **final project** to demonstrate advanced AI and NLP capabilities, simulating a real-world chatbot for educational purposes.
 
 ## 🚀 Usage Guide
 
