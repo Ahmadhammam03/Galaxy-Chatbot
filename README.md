@@ -279,15 +279,20 @@ MIT License - Free for educational and commercial use
 - **📚 Educational Community** for inspiration and guidance
 
 ## 📞 Connect & Contact
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ahmadhammam03)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
 
 **👨‍💻 Ahmad Hammam**
 
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ahmadhammam03)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ahmad.hammam.dev@gmail.com)
+
+</div>
 
 - 🐙 **GitHub**: [@Ahmadhammam03](https://github.com/Ahmadhammam03)
 - 💼 **LinkedIn**: [Ahmad Hammam](https://www.linkedin.com/in/ahmad-hammam-1561212b2)
-- 📧 **Contact**: Available via LinkedIn
+- 📧 **Email**: [ahmadhammam501@gmail.com](mailto:ahmadhammam501@gmail.com)
 - 🌐 **Portfolio**: [GitHub Profile](https://github.com/Ahmadhammam03)
 
 ## 📊 Project Statistics
